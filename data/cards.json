@@ -1,0 +1,20 @@
+[
+    {
+        "title": "鬼滅の刃",
+        "isFinished": true,
+        "image": "kimetsu.png",
+        "quantity": 1016,
+        "difficulty": "principiante",
+        "outLang": "eng",
+        "link": ""
+    },
+    {
+        "title": "HUNTER×HUNTER",
+        "isFinished": false,
+        "image": "hunter.png",
+        "quantity": 1016,
+        "difficulty": "intermedio",
+        "outLang": "eng-jap",
+        "link": ""
+    }
+]

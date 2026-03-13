@@ -1,0 +1,250 @@
+/* ========================================
+   1. RESET / BASE
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   2. COLOR SYSTEM (DARK MODE)
+======================================== */
+
+:root {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --surface-hover: #2a2a2a;
+
+  --primary: #4da3ff;
+
+  --text: #e6e6e6;
+  --text-muted: #a0a0a0;
+
+  --border: #2a2a2a;
+
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-strong: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* ========================================
+   3. BASE STYLES
+======================================== */
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ========================================
+   4. LAYOUT
+======================================== */
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+main h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   5. HEADER (GLOBAL COMPONENT)
+======================================== */
+
+header {
+  background: var(--surface);
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
+}
+
+/* animated underline */
+
+header a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: var(--primary);
+  transition: width 0.25s ease;
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   6. GALLERY GRID
+======================================== */
+
+.gallery {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* ========================================
+   7. CARD COMPONENT
+======================================== */
+
+.card {
+  background: var(--surface);
+  overflow: hidden;
+
+  box-shadow: var(--shadow-soft);
+
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* card image */
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* card content */
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  font-size: 1.1rem;
+  margin-bottom: .4rem;
+}
+
+.card-content h3 {
+  font-size: .9rem;
+  color: var(--text-muted);
+  margin-bottom: .2rem;
+}
+
+.card-content p {
+  font-size: .9rem;
+  color: var(--text-muted);
+  margin-top: .5rem;
+}
+
+/* ========================================
+   8. PAGE-SPECIFIC STYLES
+======================================== */
+
+/* ========================================
+   UPDATES (BLOG CARDS)
+======================================== */
+
+.updates-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.update {
+  background: var(--surface);
+  padding: 1rem;
+}
+
+/* meta row */
+
+.update-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: .8rem;
+  color: var(--text-muted);
+
+  margin-bottom: .4rem;
+}
+
+/* tag badge */
+
+.tag {
+  background: var(--primary);
+  color: white;
+
+  font-size: .7rem;
+  padding: 2px 6px;
+
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* title */
+
+.update h3 {
+  font-size: 1rem;
+  margin-bottom: .3rem;
+}
+
+/* text */
+
+.update p {
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   ANKI PAGES
+======================================== */
+
+.anki .gallery {
+  margin-top: 1rem;
+}
+
+
+
+/* ========================================
+   9. UTILITIES
+======================================== */
+
+.center {
+  text-align: center;
+}
+
+/* smooth transitions */
+
+a,
+button {
+  transition: all .2s ease;
+}
